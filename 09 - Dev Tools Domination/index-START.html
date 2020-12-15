@@ -18,29 +18,58 @@
     }
 
     // Regular
+    console.log('')
 
     // Interpolated
 
     // Styled
+    console.log('%c I am some string with font', 'font-size: 50px; background-color:red;')
 
     // warning!
+    console.warn('warning!');
 
     // Error :|
+    console.error('error!');
 
     // Info
+    console.info('info');
 
     // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('a'), 'This is wrong');
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p); // 以树形式查看p节点信息
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
+    console.count('ding')
+    console.count('ding')
+    console.count('asd')
+    console.count('asd')
+    console.count('asd')
 
     // timing
+    console.time('fetch');
+    fetch('https://api.github.com/users/dinjufen')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetch')
+        console.log(data)
+      })
 
+      console.table(dogs);
   </script>
 </body>
 </html>
